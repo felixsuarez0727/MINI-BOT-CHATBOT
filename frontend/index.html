@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XumtechBot - Asistente Virtual</title>
+    <meta name="description" content="Chatbot conversacional de Xumtech - Tu asistente virtual para información empresarial">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-robot"></i>
+                    <h1>XumtechBot</h1>
+                </div>
+                <nav class="nav">
+                    <a href="#home" class="nav-link active">Inicio</a>
+                    <a href="#about" class="nav-link">Acerca de</a>
+                    <a href="#services" class="nav-link">Servicios</a>
+                    <a href="#contact" class="nav-link">Contacto</a>
+                </nav>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h2 class="hero-title">
+                            Bienvenido a <span class="highlight">Xumtech</span>
+                        </h2>
+                        <p class="hero-description">
+                            Somos una empresa líder en desarrollo de software y soluciones tecnológicas en Sevilla. 
+                            Nuestro asistente virtual está aquí para ayudarte con cualquier consulta sobre nuestros servicios.
+                        </p>
+                        <div class="hero-actions">
+                            <button class="btn btn-primary" id="startChatBtn">
+                                <i class="fas fa-comments"></i>
+                                Iniciar Chat
+                            </button>
+                            <button class="btn btn-secondary" id="learnMoreBtn">
+                                <i class="fas fa-info-circle"></i>
+                                Conocer Más
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="chat-preview">
+                            <div class="chat-header">
+                                <div class="chat-avatar">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="chat-info">
+                                    <h4>XumtechBot</h4>
+                                    <span class="status online">En línea</span>
+                                </div>
+                            </div>
+                            <div class="chat-messages">
+                                <div class="message bot-message">
+                                    <div class="message-content">
+                                        ¡Hola! Soy el asistente virtual de Xumtech Sevilla. ¿En qué puedo ayudarte?
+                                    </div>
+                                    <div class="message-time">Ahora</div>
+                                </div>
+                                <div class="message user-message">
+                                    <div class="message-content">
+                                        ¿Qué servicios ofrecen?
+                                    </div>
+                                    <div class="message-time">Ahora</div>
+                                </div>
+                                <div class="message bot-message">
+                                    <div class="message-content">
+                                        En Xumtech ofrecemos desarrollo web, aplicaciones móviles, consultoría tecnológica y soluciones digitales innovadoras...
+                                    </div>
+                                    <div class="message-time">Ahora</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Acerca de Xumtech</h2>
+                    <p>Líderes en innovación tecnológica desde 2018</p>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Nuestra Misión</h3>
+                        <p>
+                            Transformar ideas en soluciones tecnológicas innovadoras que impulsen el crecimiento 
+                            de nuestros clientes y contribuyan al desarrollo digital de Andalucía.
+                        </p>
+                        <div class="stats">
+                            <div class="stat">
+                                <div class="stat-number">6+</div>
+                                <div class="stat-label">Años de Experiencia</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">150+</div>
+                                <div class="stat-label">Proyectos Completados</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">40+</div>
+                                <div class="stat-label">Clientes Satisfechos</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-building"></i>
+                            <p>Oficinas Xumtech Sevilla</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services" id="services">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Nuestros Servicios</h2>
+                    <p>Soluciones tecnológicas integrales para tu empresa</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Desarrollo de Software</h3>
+                        <p>Aplicaciones web, móviles y sistemas empresariales personalizados con las últimas tecnologías.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>Cloud Computing</h3>
+                        <p>Implementación y gestión de soluciones en la nube para optimizar tus operaciones.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Consultoría Tecnológica</h3>
+                        <p>Asesoramiento experto para la transformación digital de tu organización.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Soporte Técnico</h3>
+                        <p>Soporte 24/7 para garantizar el funcionamiento óptimo de tus sistemas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Contáctanos</h2>
+                    <p>Estamos aquí para ayudarte con tu próximo proyecto</p>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Ubicación</h4>
+                                <p>Calle Sierpes 45, Edificio Torre Sevilla<br>41004 Sevilla, España</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Teléfono</h4>
+                                <p>+34 954 123 456</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <p>info@xumtech.es</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Horarios</h4>
+                                <p>Lun - Vie: 9:00 - 18:00<br>Sáb: 9:00 - 14:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- WIDGET DE CHAT FLOTANTE -->
+    <div id="chatWidget" class="chat-widget chat-closed">
+        <!-- BOTÓN FLOTANTE (ESTADO CERRADO) -->
+        <div id="chatButton" class="chat-button">
+            <div class="chat-icon">💬</div>
+            <div class="chat-label">XumtechBot</div>
+        </div>
+
+        <!-- VENTANA DE CHAT (ESTADO ABIERTO) -->
+        <div id="chatWindow" class="chat-window">
+            <!-- HEADER -->
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <div class="bot-avatar">🤖</div>
+                    <div class="bot-info">
+                        <div class="bot-name">XumtechBot</div>
+                        <div class="bot-status">🟢 En línea</div>
+                    </div>
+                </div>
+                <button class="chat-close" id="chatCloseBtn">✕</button>
+            </div>
+
+            <!-- ÁREA DE MENSAJES -->
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <div class="message-avatar">🤖</div>
+                    <div class="message-content">
+                        ¡Hola! Soy el asistente virtual de Xumtech. ¿En qué puedo ayudarte hoy?
+                    </div>
+                    <div class="message-time">Ahora</div>
+                </div>
+            </div>
+
+            <!-- SUGERENCIAS RÁPIDAS -->
+            <div class="quick-suggestions" id="quickSuggestions">
+                <button class="suggestion-btn" data-suggestion="¿Qué servicios ofrecen?">
+                    ¿Qué servicios ofrecen?
+                </button>
+                <button class="suggestion-btn" data-suggestion="¿Cuáles son sus horarios?">
+                    ¿Cuáles son sus horarios?
+                </button>
+                <button class="suggestion-btn" data-suggestion="¿Cómo puedo contactarlos?">
+                    ¿Cómo puedo contactarlos?
+                </button>
+                <button class="suggestion-btn" data-suggestion="¿Dónde están ubicados?">
+                    ¿Dónde están ubicados?
+                </button>
+            </div>
+
+            <!-- INPUT DEL USUARIO -->
+            <div class="chat-input-container">
+                <input 
+                    type="text" 
+                    id="userInput" 
+                    placeholder="Escribe tu mensaje..."
+                >
+                <button id="sendButton">
+                    <span class="send-icon">📤</span>
+                </button>
+            </div>
+
+            <!-- INDICADOR DE ESCRITURA -->
+            <div class="typing-indicator" id="typingIndicator" style="display: none;">
+                <div class="typing-dots">
+                    <span></span><span></span><span></span>
+                </div>
+                <span class="typing-text">XumtechBot está escribiendo...</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/api.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html> 
