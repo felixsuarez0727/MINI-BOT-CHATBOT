@@ -136,7 +136,7 @@ function toggleChat() {
 }
 
 // Function to send message
-function sendMessage() {
+async function sendMessage() {
     const userInput = document.getElementById('userInput');
     if (!userInput) {
         return;
@@ -155,12 +155,21 @@ function sendMessage() {
     // Show typing indicator
     showTypingIndicator();
     
-    // Simulate bot response delay
-            setTimeout(() => {
-            hideTypingIndicator();
-            const botResponse = getBotResponse(message);
-            addMessage("bot", botResponse);
-        }, 1500);
+    try {
+        // Send message to backend API
+        const response = await apiService.sendMessage(message);
+        
+        hideTypingIndicator();
+        
+        if (response.success && response.data) {
+            addMessage("bot", response.data.response);
+        } else {
+            addMessage("bot", "Lo siento, estoy experimentando problemas técnicos. Por favor intenta de nuevo.");
+        }
+    } catch (error) {
+        hideTypingIndicator();
+        addMessage("bot", "Lo siento, no pude procesar tu mensaje. Por favor intenta de nuevo.");
+    }
 }
 
 // Function to send suggestion
