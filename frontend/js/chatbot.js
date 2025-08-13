@@ -219,7 +219,7 @@ function getBotResponse(userMessage) {
     }
     
     // Default response
-    return "Sorry, I didn't understand your query. You can ask me about our services, hours, contact, or location. How can I help you?";
+    return "Disculpa, no entendí tu consulta. Puedes preguntarme sobre nuestros servicios, horarios, contacto o ubicación. ¿Cómo puedo ayudarte?";
 }
 
 // Function to show typing indicator
@@ -271,7 +271,7 @@ function clearChat() {
             <div class="message bot-message">
                 <div class="message-avatar">🤖</div>
                 <div class="message-content">
-                    Hello! I'm the virtual assistant of Xumtech. How can I help you today?
+                    ¡Hola! Soy el asistente virtual de Xumtech. ¿En qué puedo ayudarte hoy?
                 </div>
                 <div class="message-time">Now</div>
             </div>
