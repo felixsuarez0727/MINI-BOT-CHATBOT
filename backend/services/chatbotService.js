@@ -159,20 +159,20 @@ class ChatbotService {
       // Generate fallback response
     generateFallbackResponse(userInput) {
       const fallbackResponses = [
-        'Sorry, I don\'t completely understand your query. Could you rephrase it differently?',
-        'I\'m not sure what you need. Are you referring to our services, business hours, or contact information?',
-        'Sorry, I don\'t have specific information about that. Would you like to know about our services, location, or how to contact us?',
-        'I don\'t understand your question. Can you be more specific? For example, you can ask about our services, hours, or location.',
-        'Your query is not within my current capabilities. Are you interested in learning about our services, business hours, or contact information?'
+        'Disculpa, no entiendo completamente tu consulta. ¿Podrías reformularla de otra manera?',
+        'No estoy seguro de lo que necesitas. ¿Te refieres a nuestros servicios, horarios de atención o información de contacto?',
+        'Lo siento, no tengo información específica sobre eso. ¿Te gustaría conocer nuestros servicios, ubicación o cómo contactarnos?',
+        'No entiendo tu pregunta. ¿Puedes ser más específico? Por ejemplo, puedes preguntar sobre nuestros servicios, horarios o ubicación.',
+        'Tu consulta no está dentro de mis capacidades actuales. ¿Te interesa conocer nuestros servicios, horarios de atención o información de contacto?'
       ];
 
           // Add suggested queries
       const suggestions = [
-        'What services do you offer?',
-        'What are your business hours?',
-        'How can I contact you?',
-        'Where are you located?',
-        'What is Xumtech?'
+        '¿Qué servicios ofrecen?',
+        '¿Cuáles son sus horarios?',
+        '¿Cómo puedo contactarlos?',
+        '¿Dónde están ubicados?',
+        '¿Qué es Xumtech?'
       ];
 
     const randomResponse = fallbackResponses[Math.floor(Math.random() * fallbackResponses.length)];
@@ -212,7 +212,7 @@ class ChatbotService {
     if (!sanitizedInput) {
       return {
         success: false,
-        response: 'Please enter a valid message.',
+        response: 'Por favor ingresa un mensaje válido.',
         responseTime: Date.now() - startTime
       };
     }
@@ -261,7 +261,7 @@ class ChatbotService {
     } catch (error) {
       return {
         success: false,
-        response: 'Sorry, I\'m experiencing technical issues. Please try again.',
+        response: 'Lo siento, estoy experimentando problemas técnicos. Por favor intenta de nuevo.',
         responseTime: Date.now() - startTime
       };
     }
