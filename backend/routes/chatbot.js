@@ -11,11 +11,7 @@ const validateMessage = [
     .trim()
     .isLength({ min: 1, max: 500 })
     .withMessage('Message must be between 1 and 500 characters')
-    .escape(),
-  body('sessionId')
-    .optional()
-    .isUUID(4)
-    .withMessage('Session ID must be a valid UUID')
+    .escape()
 ];
 
 // Process user message
