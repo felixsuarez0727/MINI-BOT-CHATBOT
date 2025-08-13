@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node backend/server.js",
     "dev": "nodemon backend/server.js",
-    "setup": "node backend/setup/database.js"
+    "setup": "node backend/setup/database.js",
+    "vercel-build": "npm run setup"
   },
   "keywords": ["chatbot", "xumtech", "api", "rest"],
   "author": "Desarrollador",
