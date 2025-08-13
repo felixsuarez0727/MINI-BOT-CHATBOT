@@ -24,12 +24,44 @@ const botKnowledge = {
         response: "Puedes contactarnos al teléfono +34 954 123 456, por email a info@xumtech.es, o visitarnos en nuestra oficina en Sevilla."
     },
     "ubicacion": {
-        keywords: ["ubicación", "dónde", "dirección", "oficina", "ubicados", "localización"],
+        keywords: ["ubicación", "dónde", "dirección", "oficina", "ubicados", "localización", "ciudad", "ciudades"],
         response: "Estamos ubicados en Sevilla, España. Calle Sierpes 45, Edificio Torre Sevilla, 41004. Estamos en el corazón del centro histórico de Sevilla."
     },
     "empresa": {
         keywords: ["xumtech", "empresa", "quiénes son", "acerca de", "información"],
         response: "Somos Xumtech, líderes en innovación tecnológica desde 2018 en Sevilla. Transformamos ideas en soluciones digitales innovadoras que impulsan el crecimiento de nuestros clientes en Andalucía."
+    },
+    "especializacion": {
+        keywords: ["especialización", "especialidad", "especializan", "áreas", "en qué se especializan"],
+        response: "Nos especializamos en desarrollo web con React, Angular y Vue.js, aplicaciones móviles nativas e híbridas, sistemas empresariales, inteligencia artificial y cloud computing."
+    },
+    "tecnologias": {
+        keywords: ["tecnologías", "tecnología", "stack", "herramientas", "lenguajes", "framework", "manejan"],
+        response: "Trabajamos con las últimas tecnologías: JavaScript/TypeScript, Python, Java, .NET, React, Angular, Vue.js, Node.js, Django, Spring Boot, AWS, Azure, Docker, Kubernetes y más."
+    },
+    "desarrollo_web": {
+        keywords: ["desarrollo web", "web", "sitios web", "páginas web", "ofrecen desarrollo"],
+        response: "Sí, ofrecemos desarrollo web completo. Creamos sitios web modernos, aplicaciones web progresivas (PWA), e-commerce, y sistemas web empresariales con las últimas tecnologías."
+    },
+    "cotizacion": {
+        keywords: ["cotización", "presupuesto", "precio", "costo", "cuánto cuesta", "solicitar cotización"],
+        response: "Para solicitar una cotización, puedes enviarnos un email a cotizaciones@xumtech.es con los detalles de tu proyecto, o agendar una reunión llamando al +34 954 123 456."
+    },
+    "soporte": {
+        keywords: ["soporte técnico", "soporte", "ayuda técnica", "problemas técnicos", "fallas", "mantenimiento"],
+        response: "Ofrecemos soporte técnico 24/7 para todos nuestros clientes. Puedes contactar a nuestro equipo de soporte al +34 954 123 457 o enviar un ticket a soporte@xumtech.es."
+    },
+    "experiencia": {
+        keywords: ["experiencia", "años en el mercado", "historia", "trayectoria", "proyectos realizados"],
+        response: "Con más de 6 años en el mercado, hemos completado más de 150 proyectos exitosos para empresas de diversos sectores. Nuestra experiencia incluye startups, medianas empresas y corporaciones."
+    },
+    "capacitacion": {
+        keywords: ["capacitación", "entrenamiento", "cursos", "formación", "aprendizaje", "dan cursos"],
+        response: "Ofrecemos programas de capacitación en tecnologías modernas, metodologías ágiles y mejores prácticas de desarrollo. Nuestros cursos son personalizados según las necesidades de tu empresa."
+    },
+    "metodologias": {
+        keywords: ["metodologías", "metodología", "proceso", "agile", "scrum", "usan", "trabajan con agile"],
+        response: "Utilizamos metodologías ágiles como Scrum y Kanban, con sprints de 2 semanas, reuniones diarias, retrospectivas y entrega continua. Adaptamos nuestros procesos a las necesidades específicas de cada proyecto."
     },
     "saludo": {
         keywords: ["hola", "buenos días", "buenas tardes", "buenas noches", "como estás", "que tal"],
@@ -136,7 +168,7 @@ function toggleChat() {
 }
 
 // Function to send message
-async function sendMessage() {
+function sendMessage() {
     const userInput = document.getElementById('userInput');
     if (!userInput) {
         return;
@@ -155,21 +187,12 @@ async function sendMessage() {
     // Show typing indicator
     showTypingIndicator();
     
-    try {
-        // Send message to backend API
-        const response = await apiService.sendMessage(message);
-        
+    // Simulate bot response delay (FAST)
+    setTimeout(() => {
         hideTypingIndicator();
-        
-        if (response.success && response.data) {
-            addMessage("bot", response.data.response);
-        } else {
-            addMessage("bot", "Lo siento, estoy experimentando problemas técnicos. Por favor intenta de nuevo.");
-        }
-    } catch (error) {
-        hideTypingIndicator();
-        addMessage("bot", "Lo siento, no pude procesar tu mensaje. Por favor intenta de nuevo.");
-    }
+        const botResponse = getBotResponse(message);
+        addMessage("bot", botResponse);
+    }, 800); // Reduced from 1500ms to 800ms
 }
 
 // Function to send suggestion
