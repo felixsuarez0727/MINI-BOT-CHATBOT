@@ -2,13 +2,18 @@ const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
 const bcrypt = require('bcryptjs');
 
-const dbPath = path.join(__dirname, '../../database/chatbot.db');
+// Use in-memory database for Vercel deployment
+const dbPath = process.env.NODE_ENV === 'production' 
+  ? ':memory:' 
+  : path.join(__dirname, '../../database/chatbot.db');
 
-// Ensure database directory exists
-const fs = require('fs');
-const dbDir = path.dirname(dbPath);
-if (!fs.existsSync(dbDir)) {
-  fs.mkdirSync(dbDir, { recursive: true });
+// Ensure database directory exists only for local development
+if (process.env.NODE_ENV !== 'production') {
+  const fs = require('fs');
+  const dbDir = path.dirname(dbPath);
+  if (!fs.existsSync(dbDir)) {
+    fs.mkdirSync(dbDir, { recursive: true });
+  }
 }
 
 const db = new sqlite3.Database(dbPath);
